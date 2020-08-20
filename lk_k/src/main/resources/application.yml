@@ -1,0 +1,28 @@
+spring:
+  resources:
+    static-locations: classpath:/static/
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/vuelearn?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useSSL=false
+      &serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: root
+    password: 200011
+  security:
+    user:
+      name: kt
+      password: 123
+  devtools:
+    restart:
+      poll-interval: 2000ms
+      quiet-period: 1999ms
+      enabled: true  #设置开启热部署
+      additional-paths: src/main/java #重启目录
+      exclude: WEB-INF/**
+    freemarker:
+      cache: false    #页面不加载缓存，修改即时生效
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+server:
+  port: 8433
+jwt:
+  secret: javainuse
